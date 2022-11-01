@@ -83,8 +83,6 @@ function init() {
 
 //Functions
 
-function
-
 
 
 app.listen(PORT, () =>
