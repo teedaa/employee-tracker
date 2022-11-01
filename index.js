@@ -23,7 +23,7 @@ const db = mysql.createConnection(
   console.log(`Connected to the employee_db database.`)
 );
 
-//Inquirer questions
+//Startup question
 init(); 
 function init() {
     inquirer.createPromptModule([
@@ -74,12 +74,17 @@ function init() {
             case 'Delete Employee':
                 deleteEmployee();
                 break;
-            case 'Exit':
+            case 'Quit':
                 console.log('Goodbye');
                 break;
         }
     })
 };
+
+//Functions
+
+function
+
 
 
 app.listen(PORT, () =>
