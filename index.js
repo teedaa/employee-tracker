@@ -96,7 +96,7 @@ function viewRoles() {
 };
 
 function viewEmployees() {
-    db.query('SELECT * FROM employees', (error, result) => {
+    db.query('SELECT * FROM employees union SELECT * FROM managers', (error, result) => {
         if (error) throw error;
 
         console.table(result);

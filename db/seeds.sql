@@ -25,3 +25,8 @@ VALUES('Farley', 'Whittles', 1, null),
 ('Lightning', 'McQueen', 4, 4),
 ('Jack', 'Sparrow', 5, null);
 
+INSERT INTO managers (first_name, last_name, role_id, department_id)
+VALUES
+('DJ', 'Pauly D', 1, 1),
+('Kid', 'Cudi', 2, 2),
+('Action', 'Bronson', 3, 3);
