@@ -122,7 +122,7 @@ function addDepartment() {
 
 function addRole() {
     inquirer.prompt([{
-        name: 'name',
+        name: 'title',
         type: 'input',
         message: 'Input the role title: '
     },
@@ -140,24 +140,24 @@ function addRole() {
         }
     },
     {
-        name: 'department',
-        type: 'list',
-        message: 'Select from departments:',
-        choices: getDepartments()
-    }
-    ])
-        .then(res => {
-            db.query('INSERT INTO roles SET ?', {
-                title: res.role,
-                salary: res.salary,
-                department_id: res.department
-            },
-
+        type: 'input',
+        message: 'Department ID',
+        name: 'departmentID',
+    },
+])
+.then((response) => {
+    db.query(`INSERT INTO roles SET ?`,
+        {
+        
+            title: response.title,
+            salary: response.salary,
+            department_id: response.departmentID,
+        },
                 (err, res) => {
                     if (err) throw err;
                     console.log('Role has been added')
 
-                    menu();
+                    init();
                 })
         })
 };
@@ -175,15 +175,16 @@ function addEmployee() {
     },
     {
         name: 'role',
-        type: 'list',
-        message: 'Select role:',
-        choices: getRoles()
+        type: 'input',
+        message: 'Input role ID',
+ 
+        
     },
     {
         name: 'manager',
-        type: 'list',
-        message: 'Select reporting manager:',
-        choices: getManagers()
+        type: 'input',
+        message: 'Input reporting manager:',
+        
     }
     ])
         .then(response => {
@@ -199,7 +200,7 @@ function addEmployee() {
                     if (err) throw err;
                     console.log('Employee created.')
 
-                    menu();
+                    init();
                 })
         })
     };
