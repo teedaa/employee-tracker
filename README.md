@@ -1,7 +1,7 @@
 # Employee Tracker
 
 ## Description
-A CLI application that allows you to create an employee tracker system. You can view and edit employee roles, names, departments, and managers. 
+A CLI application that allows you to create an employee tracker system. You can view and edit employee roles, names, departments, and managers. Upon running application, run a npm i to install required dependencies for the application.
 
 ## Usage
 ![Screenshot](./screenshot.png)
