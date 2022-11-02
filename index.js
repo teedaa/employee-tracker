@@ -32,7 +32,7 @@ function init() {
             name: 'init',
             message: 'What would you like to do?',
             choices: [
-                'View all Departments', 
+                'View all departments', 
                 'View all roles', 
                 'View all employees', 
                 'Add a department',
@@ -86,7 +86,7 @@ function viewDepartments() {
 };
 
 function viewRoles() {
-    db.query('SELECT * FROM roles', (error, result) => {
+    db.query('SELECT * FROM roles ', (error, result) => {
         if (error) throw error;
 
         console.table(result);
@@ -96,7 +96,7 @@ function viewRoles() {
 };
 
 function viewEmployees() {
-    db.query('SELECT * FROM employees union SELECT * FROM managers', (error, result) => {
+    db.query('SELECT id, first_name, last_name FROM employees' , (error, result) => {
         if (error) throw error;
 
         console.table(result);
