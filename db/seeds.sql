@@ -1,13 +1,13 @@
-USE employee_db;
+USE tracker_db;
 
-INSERT INTO departments(department_name)
+INSERT INTO departments(name)
 VALUES
 ('Marketing'),
 ('IT'),
 ('HR'),
 ('Legal');
 
-INSERT INTO roles(job_title, salary, department_id) 
+INSERT INTO roles(title, salary, department_id) 
 VALUES 
 ('Marketing Lead', 80000, 1),
 ('Marketer', 55000, 2),
