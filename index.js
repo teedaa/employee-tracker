@@ -96,7 +96,7 @@ function viewRoles() {
 };
 
 function viewEmployees() {
-    db.query('SELECT id, first_name, last_name FROM employees' , (error, result) => {
+    db.query('SELECT * FROM employees' , (error, result) => {
         if (error) throw error;
 
         console.table(result);
